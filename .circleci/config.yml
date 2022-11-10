@@ -28,12 +28,13 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
+      - checkout
       - run:
           name: "Say world"
           command: "echo World!"
       - run:
           name: "Say my env"
-          command: $MY_ENV_VAR
+          command: | echo $MY_ENV_VAR
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
